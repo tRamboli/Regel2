@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CheckCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="creditnum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carddate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCreditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckCreditResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckBal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="creditnum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carddate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ordsum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckBalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckBalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Howmuchlower">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="creditnum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carddate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ordsum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HowmuchlowerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HowmuchlowerResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Updtbalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="creditnum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carddate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ordsum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdtbalanceResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckCredit" />
+  </wsdl:message>
+  <wsdl:message name="CheckCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckBalSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckBal" />
+  </wsdl:message>
+  <wsdl:message name="CheckBalSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckBalResponse" />
+  </wsdl:message>
+  <wsdl:message name="HowmuchlowerSoapIn">
+    <wsdl:part name="parameters" element="tns:Howmuchlower" />
+  </wsdl:message>
+  <wsdl:message name="HowmuchlowerSoapOut">
+    <wsdl:part name="parameters" element="tns:HowmuchlowerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdtbalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:Updtbalance" />
+  </wsdl:message>
+  <wsdl:message name="UpdtbalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdtbalanceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="CheckCredit">
+      <wsdl:input message="tns:CheckCreditSoapIn" />
+      <wsdl:output message="tns:CheckCreditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckBal">
+      <wsdl:input message="tns:CheckBalSoapIn" />
+      <wsdl:output message="tns:CheckBalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Howmuchlower">
+      <wsdl:input message="tns:HowmuchlowerSoapIn" />
+      <wsdl:output message="tns:HowmuchlowerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Updtbalance">
+      <wsdl:input message="tns:UpdtbalanceSoapIn" />
+      <wsdl:output message="tns:UpdtbalanceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckCredit">
+      <soap:operation soapAction="http://tempuri.org/CheckCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckBal">
+      <soap:operation soapAction="http://tempuri.org/CheckBal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Howmuchlower">
+      <soap:operation soapAction="http://tempuri.org/Howmuchlower" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Updtbalance">
+      <soap:operation soapAction="http://tempuri.org/Updtbalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckCredit">
+      <soap12:operation soapAction="http://tempuri.org/CheckCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckBal">
+      <soap12:operation soapAction="http://tempuri.org/CheckBal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Howmuchlower">
+      <soap12:operation soapAction="http://tempuri.org/Howmuchlower" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Updtbalance">
+      <soap12:operation soapAction="http://tempuri.org/Updtbalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://localhost:1147/ws/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://localhost:1147/ws/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

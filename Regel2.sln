@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Regel2", ".", "{F5968A73-F789-46DD-938D-6F1FA960E590}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
+		Debug.AspNetCompiler.VirtualPath = "/Regel2"
+		Debug.AspNetCompiler.PhysicalPath = "..\Regel2\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Regel2\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Regel2"
+		Release.AspNetCompiler.PhysicalPath = "..\Regel2\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Regel2\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "3572"
+		SlnRelativePath = "..\Regel2\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5968A73-F789-46DD-938D-6F1FA960E590}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{F5968A73-F789-46DD-938D-6F1FA960E590}.Debug|.NET.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45F3B4C1-C928-47E9-80AD-E81A2CCB3B02}
+	EndGlobalSection
+EndGlobal
